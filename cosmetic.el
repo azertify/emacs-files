@@ -14,5 +14,11 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+(set-face-attribute 'mode-line nil
+		    :box nil
+		    :overline nil
+		    :underline nil)
+(setq )
+
 (provide 'cosmetic)
 ;;; cosmetic.el ends here
