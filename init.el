@@ -11,7 +11,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
+    ("36d92f830c21797ce34896a4cf074ce25dbe0dabe77603876d1b42316530c99d" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "127.0.0.1")
  '(smtpmail-smtp-service 1025))
@@ -26,9 +26,6 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
-
-(load-file "~/.emacs.d/cosmetic.el")
-(load-file "~/.emacs.d/mail.el")
 
 (require 'helm-config)
 (helm-mode 1)
@@ -78,7 +75,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (require 'smart-mode-line)
-(setq sml/theme 'light)
+(setq sml/theme 'light-powerline)
 (sml/setup)
 
 ;; Backup files
@@ -99,5 +96,11 @@
 (show-paren-mode 1)
 (setq scheme-program-name "C:\\chicken-iup\\bin\\csi -:c")
 
+(load-file "~/.emacs.d/cosmetic.el")
+(load-file "~/.emacs.d/mail.el")
+
 (provide 'init)
 ;;; init.el ends here
+
+
+
