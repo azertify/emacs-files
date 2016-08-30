@@ -17,8 +17,11 @@
 (set-face-attribute 'mode-line nil
 		    :box nil
 		    :overline nil
-		    :underline nil)
-(setq )
+		    :underline nil
+		    :font "Hack-11")
+
+(set-face-attribute 'default nil
+		    :font "Hack-11")
 
 (provide 'cosmetic)
 ;;; cosmetic.el ends here

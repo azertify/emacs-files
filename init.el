@@ -74,6 +74,7 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+
 (require 'smart-mode-line)
 (setq sml/theme 'light-powerline)
 (sml/setup)
