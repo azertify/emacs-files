@@ -18,10 +18,17 @@
 		    :box nil
 		    :overline nil
 		    :underline nil
-		    :font "Hack-11")
+		    :font "Hack-9")
+
+(set-face-attribute 'mode-line-inactive nil
+		    :box nil
+		    :overline nil
+		    :underline nil)
 
 (set-face-attribute 'default nil
-		    :font "Hack-11")
+		    :font "Hack-9")
+
+(load-theme 'zenburn t)
 
 (provide 'cosmetic)
 ;;; cosmetic.el ends here

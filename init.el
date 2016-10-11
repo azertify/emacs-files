@@ -76,7 +76,7 @@
 
 
 (require 'smart-mode-line)
-(setq sml/theme 'light-powerline)
+(setq sml/theme 'powerline)
 (sml/setup)
 
 ;; Backup files
@@ -102,6 +102,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-
-
-
