@@ -13,7 +13,7 @@
 (setq gnus-select-method '(nnimap "squaredup"
 				  (nnimap-address "127.0.0.1")
 				  (nnimap-server-port 1143)
-				  (nnimap-stream ssl)))
+				  (nnimap-stream plain)))
 
 (setq mm-discouraged-alternatives '("text/html" "text/richtext"))
 
@@ -21,7 +21,7 @@
 (setq send-mail-function 'smtpmail-send-it
       message-send-mail-function 'smtpmail-send-it
       smtpmail-smtp-server "127.0.0.1"
-      smtpmail-stream-type 'ssl
+      smtpmail-stream-type nil
       smtpmail-smtp-service 1025)
 
 (provide 'mail)
