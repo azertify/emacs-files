@@ -14,6 +14,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+(add-to-list 'default-frame-alist '(font . "Hack-9"))
+
 (load-theme 'zenburn t)
 
 (set-face-attribute 'default nil

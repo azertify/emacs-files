@@ -4,11 +4,6 @@
 
 ;;; Code:
 
-;; Daemon
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,6 +12,14 @@
  '(custom-safe-themes
    (quote
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "36d92f830c21797ce34896a4cf074ce25dbe0dabe77603876d1b42316530c99d" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
+ '(inhibit-startup-screen t)
+ '(initial-major-mode (quote org-mode))
+ '(initial-scratch-message "
+
+")
+ '(package-selected-packages
+   (quote
+    (markdown-mode markdown-mode+ zenburn-theme web-mode sr-speedbar spinner smart-mode-line-powerline-theme rainbow-delimiters queue omnisharp magit js3-mode js2-mode js-comint helm-projectile haskell-mode ggtags expand-region erlang diff-hl company-tern clojure-mode ahk-mode ac-helm ac-emoji 2048-game)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "localhost")
  '(smtpmail-smtp-service 1025))
@@ -106,6 +109,39 @@
 	 (setq c-basic-offset 4)))
 (add-hook 'csharp-mode-hook 'set-c-indentation-style)
 
+;; Web Browser
+;; make these keys behave like normal browser
+;; (define-key xwidget-webkit-mode-map [mouse-4] 'xwidget-webkit-scroll-down)
+;; (define-key xwidget-webkit-mode-map [mouse-5] 'xwidget-webkit-scroll-up)
+;; (define-key xwidget-webkit-mode-map (kbd "<up>") 'xwidget-webkit-scroll-down)
+;; (define-key xwidget-webkit-mode-map (kbd "<down>") 'xwidget-webkit-scroll-up)
+;; (define-key xwidget-webkit-mode-map (kbd "M-w") 'xwidget-webkit-copy-selection-as-kill)
+;; (define-key xwidget-webkit-mode-map (kbd "C-c") 'xwidget-webkit-copy-selection-as-kill)
+
+;; ;; adapt webkit according to window configuration chagne automatically
+;; ;; without this hook, every time you change your window configuration,
+;; ;; you must press 'a' to adapt webkit content to new window size
+;; (add-hook 'window-configuration-change-hook (lambda ()
+;;                (when (equal major-mode 'xwidget-webkit-mode)
+;;                  (xwidget-webkit-adjust-size-dispatch))))
+
+;; ;; by default, xwidget reuses previous xwidget window,
+;; ;; thus overriding your current website, unless a prefix argument
+;; ;; is supplied
+;; ;;
+;; ;; This function always opens a new website in a new window
+;; (defun xwidget-browse-url-no-reuse (url &optional sessoin)
+;;   (interactive (progn
+;;                  (require 'browse-url)
+;;                  (browse-url-interactive-arg "xwidget-webkit URL: "
+;;                                              )))
+;;   (xwidget-webkit-browse-url url t))
+
+;; ;; make xwidget default browser
+;; (setq browse-url-browser-function (lambda (url session)
+;;                     (other-window 1)
+;;                     (xwidget-browse-url-no-reuse url)))
+
 ;; Web Mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
@@ -136,3 +172,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)
